@@ -28,7 +28,7 @@ pip install -r requirements.txt
 If you're using Kaggle, navigate to the working directory of your model with the following command:
 
 ```bash
-%cd /kaggle/working/NhaBeModel
+%cd ./NhaBeModel
 ```
 
 ## Running the Demo
@@ -40,7 +40,7 @@ To run a demo of the model, follow the steps below:
 ```python
 import torch
 import utils
-from ConvLSTMModel import ConvLSTMModel
+import model
 ```
 
 2. Set the device for running the model (CUDA or CPU):
@@ -59,12 +59,12 @@ model.to(device)
 4. Define the file paths for the input images and ground truth:
 
 ```python
-image_1_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/139.jpeg'
-image_2_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/140.jpeg'
-image_3_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/141.jpeg'
-image_4_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/142.jpeg'
-image_5_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/143.jpeg'
-ground_truth_path = '/kaggle/input/finaldataacompa/all_128/month_2/28/144.jpeg'
+image_1_path = 'path1.jpeg'
+image_2_path = 'path2.jpeg'
+image_3_path = 'path3.jpeg'
+image_4_path = 'path4.jpeg'
+image_5_path = 'path5.jpeg'
+ground_truth_path = 'path6.jpeg'
 file_paths = [image_1_path, image_2_path, image_3_path, image_4_path, image_5_path, ground_truth_path]
 ```
 
