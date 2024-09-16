@@ -15,7 +15,16 @@ git clone <repository-url>
 
 Replace `<repository-url>` with the actual URL of your Git repository.
 
-### 2. Install Dependencies
+
+### 2. Change Directory (For Kaggle Users)
+
+If you're using Kaggle, navigate to the working directory of your model with the following command:
+
+```bash
+%cd ./NhaBeModel
+```
+
+### 3. Install Dependencies
 
 Navigate to the project directory and install the required packages from the `requirements.txt` file:
 
@@ -23,13 +32,6 @@ Navigate to the project directory and install the required packages from the `re
 pip install -r requirements.txt
 ```
 
-### 3. Change Directory (For Kaggle Users)
-
-If you're using Kaggle, navigate to the working directory of your model with the following command:
-
-```bash
-%cd ./NhaBeModel
-```
 
 ## Running the Demo
 
