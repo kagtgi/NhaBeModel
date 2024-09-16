@@ -60,7 +60,7 @@ def add_background(frame, isLink = True):
         colored_image_array_uint8 = (colored_image_array[:, :, :3] * 255).astype(np.uint8)
 
         background = Image.fromarray(colored_image_array_uint8).convert("RGBA")
-        img = Image.open('/kaggle/input/xoa-phong-bg/processed_background.png').convert("RGBA")  # Ensure this is an image file with transparency
+        img = Image.open('./demo/processed_background.png').convert("RGBA")  # Ensure this is an image file with transparency
         img = img.resize((128,128), Image.ANTIALIAS)
         background = background.resize((128, 128), Image.ANTIALIAS)
         # Calculate the offset for centering the image
