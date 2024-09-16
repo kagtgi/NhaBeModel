@@ -2,7 +2,6 @@ import os
 import numpy as np
 import torch
 import torchvision.transforms as transforms
-from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from PIL import Image
 import matplotlib.pyplot as plt
 from PIL import ImageOps
@@ -16,12 +15,18 @@ import numpy as np
 import torch
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
-from tensorflow.keras.preprocessing.image import img_to_array, load_img
 import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 img_height = 128
 img_width = 128
+
+data_transforms = [
+    transforms.Lambda(lambda t: t/255.0),
+    transforms.Lambda(lambda t: 1-t),
+]
+data_transform = transforms.Compose(data_transforms)
+
 def add_background(frame, isLink = True):
         colors = [
             '#FFFFFF',                       # index 0: white
