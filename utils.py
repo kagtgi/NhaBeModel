@@ -22,6 +22,8 @@ import matplotlib.pyplot as plt
 img_height = 128
 img_width = 128
 
+device = torch.device("cuda:0") if torch.cuda.is_available() else torch.device("cpu")
+
 data_transforms = [
     transforms.Lambda(lambda t: t/255.0),
     transforms.Lambda(lambda t: 1-t),
