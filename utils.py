@@ -141,3 +141,28 @@ def visualize(file_paths, model):
     print(path)
     plt.savefig(path, bbox_inches='tight', dpi=300)
     plt.show()
+
+class FramePredictionDataset(Dataset):
+    def __init__(self, images, transform=None):
+        self.frames = images
+        self.transform = transform
+    def __len__(self):
+        return len(self.frames) - 5
+
+    def __getitem__(self, idx):
+        frame_sequence = []
+        for i in range(5):
+            frame = self.frames[idx + i]
+            frame = torch.tensor(frame, dtype=torch.float32).squeeze(-1)  # Remove singleton channel dimension
+            if self.transform:
+                frame = self.transform(frame)
+            frame_sequence.append(frame)
+
+        input_frames = torch.stack(frame_sequence, dim=0)  # Stack frames along a new channel dimension to get (5, H, W)
+
+        target_frame = self.frames[idx + 5]
+        target_frame = torch.tensor(target_frame, dtype=torch.float32).squeeze(-1).unsqueeze(0)  # Remove singleton channel dimension and add new channel dimension
+        if self.transform:
+            target_frame = self.transform(target_frame)
+
+        return input_frames, target_frame
