@@ -6,6 +6,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 from PIL import ImageOps
 import matplotlib.colors as mcolors
+from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from matplotlib.colorbar import ColorbarBase
 from matplotlib.colors import LinearSegmentedColormap, ListedColormap
 import random
