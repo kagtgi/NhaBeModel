@@ -41,8 +41,8 @@ To run a demo of the model, follow the steps below:
 
 ```python
 import torch
-import utils
-import model
+from utils import visualize, FramePredictionDataset
+from model import ConvLSTMModel
 ```
 
 2. Set the device for running the model (CUDA or CPU):
