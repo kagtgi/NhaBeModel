@@ -62,11 +62,11 @@ model.to(device)
 
 ```python
 image_1_path = './demo/107.jpeg'
-image_2_path = './demo/107.jpeg'
-image_3_path = './demo/107.jpeg'
-image_4_path = './demo/107.jpeg'
-image_5_path = './demo/107.jpeg'
-ground_truth_path = './demo/107.jpeg'
+image_2_path = './demo/108.jpeg'
+image_3_path = './demo/109.jpeg'
+image_4_path = './demo/110.jpeg'
+image_5_path = './demo/111.jpeg'
+ground_truth_path = './demo/112.jpeg'
 
 file_paths = [image_1_path, image_2_path, image_3_path, image_4_path, image_5_path, ground_truth_path]
 ```
